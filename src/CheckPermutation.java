@@ -11,6 +11,11 @@ public class CheckPermutation {
         str1 = str1.replaceAll("\\s+", "");
         str2 = str2.replaceAll("\\s+", "");
 
+        if (str1.length() != str2.length()) {
+            System.out.println("Not a permutation");
+            return;
+        }
+
         char[] chAr1 = str1.toCharArray();
         char[] chAr2 = str2.toCharArray();
 
