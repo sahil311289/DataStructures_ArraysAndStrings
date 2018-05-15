@@ -5,7 +5,7 @@ public class IsUnique {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
-        input = input.replaceAll("//s+", "");
+        input = input.replaceAll("\\s+", "");
         // Check if the length of the string is more than 26 characters.
         // If yes, characters are not unique.
         if (input.length() > 128) {
