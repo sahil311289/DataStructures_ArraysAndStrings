@@ -26,6 +26,5 @@ public class MaximumAverageSumPartionOfArray {
             sum2 += list.get(j);
         }
         System.out.println("Sum is: " + sum + (double) sum2 / k);
-
     }
 }
