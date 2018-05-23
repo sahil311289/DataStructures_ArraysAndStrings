@@ -1,6 +1,7 @@
 public class MaxDifference {
     public static void main(String[] args) {
-        int[] ar = {4, 1, 2, 3};
+        int[] ar3 = {4, 1, 2, 3};
+        int[] ar = {5, 10, 7, 6, 4, 3, 1};
         maxDiff(ar);
     }
 
