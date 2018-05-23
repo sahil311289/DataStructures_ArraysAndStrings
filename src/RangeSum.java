@@ -14,7 +14,7 @@ public class RangeSum {
                 sum += ar[i][j];
             }
         }
-        System.out.println(sum + "\n");
+        System.out.println(sum);
     }
 
     static void update(int i, int j, int val) {
