@@ -9,8 +9,9 @@ In order to qualify for DP, a problem must have
 */
 
 public class DP_Fibonacci {
-    static long startTime1, startTime2, endTime1, endTime2;
-    static long[] vals = new long[200];
+    static long startTime1, endTime1;
+    static int[] vals = new int[200];
+    static int[] vals2 = new int[200];
 
     public static void main(String[] args) {
         startTime1 = System.currentTimeMillis();
@@ -22,10 +23,17 @@ public class DP_Fibonacci {
             vals[i] = -1;
         }
 
-        startTime2 = System.currentTimeMillis();
+        // Memoization: Top down
+        startTime1 = System.currentTimeMillis();
         System.out.println(fib2(190));
-        endTime2 = System.currentTimeMillis();
-        System.out.println(endTime2 - startTime2 + " ms");
+        endTime1 = System.currentTimeMillis();
+        System.out.println(endTime1 - startTime1 + " ms");
+
+        // Tabulation: Bottom up
+        startTime1 = System.currentTimeMillis();
+        System.out.println(fib3(190));
+        endTime1 = System.currentTimeMillis();
+        System.out.println(endTime1 - startTime1 + " ms");
     }
 
     static long fib(long n) {
@@ -35,14 +43,25 @@ public class DP_Fibonacci {
         return fib(n - 1) + fib(n - 2);
     }
 
-    static long fib2(long n) {
-        if (vals[(int) n] == -1) {
+    // top down
+    static int fib2(int n) {
+        if (vals[n] == -1) {
             if (n <= 1) {
-                vals[(int) n] = n;
+                vals[n] = n;
             } else {
-                vals[(int) n] = fib2(n - 1) + fib2(n - 2);
+                vals[n] = fib2(n - 1) + fib2(n - 2);
             }
         }
-        return vals[(int) n];
+        return vals[n];
+    }
+
+    // bottom up
+    static int fib3(int n) {
+        vals[0] = 0;
+        vals[1] = 1;
+        for (int i = 2; i < n; i++) {
+            vals[i] = vals[i - 1] + vals[i - 2];
+        }
+        return vals[n];
     }
 }
